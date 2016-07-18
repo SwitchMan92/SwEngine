@@ -4,18 +4,26 @@
 #include <map>
 
 #include "ishader.h"
-#include "icontextdependependentresource.h"
+#include "icontextresource.h"
 
-class IShaderChain : IContextDependentResource
+class IShaderChain : IContextResource
 {
-    virtual map<unsigned int, IShader*>     getShaderChain()                                            =   0;
-    virtual void                            setShaderChain(map<unsigned int, Ishader*> p_ShaderChain)   =   0;
-    virtual void                            addShader(IShader* p_Shader)                                =   0;
-    virtual void                            removeShader(int p_Index)                                   =   0;
-    virtual void                            removeShader(unsigned int p_Id)                             =   0;
-    virtual void                            setShader(int p_Position, IShader* p_Shader)                =   0;
-    virtual void							bindShaderChain()											=	0;
-    virtual void							unbindShaderChain()											=	0;
+
+protected:
+
+    virtual void							bindShaderChain		()										=	0;
+    virtual void							unbindShaderChain	()										=	0;
+
+public:
+
+    virtual void                            addShader			(IShader* p_Shader)						=   0;
+    virtual void                            removeShader		(int p_Index)							=   0;
+    virtual void                            removeShader		(unsigned int p_Id)						=   0;
+    virtual void                            setShader			(int p_Position, IShader* p_Shader)		=   0;
+    virtual IShader*						getShader			(int p_Position)						=	0;
+
+    virtual									~IShaderChain		()										{}
+
 };
 
 #endif // ISHADERCHAIN_H

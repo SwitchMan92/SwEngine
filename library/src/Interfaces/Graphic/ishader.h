@@ -1,12 +1,16 @@
 #ifndef ISHADER_H
 #define ISHADER_H
 
-#include "icontextdependependentresource.h"
+#include "icontextresource.h"
 
 
-class IShader : IContextDependentResource
+class IShader : IContextResource
 {
-    virtual unsigned int    getId()     =   0;
+
+public:
+
+	virtual ~IShader(){}
+
 };
 
 #endif // ISHADER_H

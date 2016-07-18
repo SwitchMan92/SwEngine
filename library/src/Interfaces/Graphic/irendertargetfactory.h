@@ -5,10 +5,15 @@
 
 class IRenderTargetFactory
 {
-    virtual IRenderTarget   createRenderTarget(int p_Width, int p_Height)   =   0;
-    virtual IRenderTarget   getRenderTarget(unsigned int p_Id)              =   0;
-    virtual IRenderTarget   getRenderTarget(int p_Index)                    =   0;
-    virtual void            deleteRenderTarget(unsigned int p_Id)           =   0;
+
+public:
+
+    virtual IRenderTarget*		createRenderTarget		(int, int)			=   0;
+    virtual IRenderTarget*		getRenderTarget			(unsigned int)		=   0;
+    virtual void            	deleteRenderTarget		(unsigned int)		=   0;
+
+    virtual						~IRenderTargetFactory	()					{}
+
 };
 
 #endif // IRENDERTARGETFACTORY_H

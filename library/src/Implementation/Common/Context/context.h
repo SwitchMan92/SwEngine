@@ -2,24 +2,25 @@
 #define CONTEXT_H
 
 #include "icontext.h"
+#include "contextresource.h"
 
 class Context : IContext
 {
 
 private:
 
-    std::list<IContextResource*> m_ContextResources;
-
-public:
-
-    Context();
-     ~Context();
+    std::list<ContextResource*> 		m_ContextResources;
 
 protected:
 
-    void bindResource(IContextResource*);
-    void unbindResource(IContextResource*);
-    void resetResource(IContextResource*);
+    void 			bindResource		(ContextResource*);
+    void 			unbindResource		(ContextResource*);
+
+public:
+
+    				Context				();
+    				~Context			();
+
 
 };
 

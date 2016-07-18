@@ -10,9 +10,13 @@ class IContext
 
 protected:
 
-    virtual void bindResource(IContextResource*)   =   0;
-    virtual void unbindResource(IContextResource*) =   0;
-    virtual void resetResource(IContextResource*)  =   0;
+    virtual void 	bindResource	(IContextResource*)   	=   0;
+    virtual void 	unbindResource	(IContextResource*) 	=   0;
+    virtual void 	resetResource	(IContextResource*)  	=   0;
+
+public:
+
+    virtual 		~IContext		()						{}
 
 };
 

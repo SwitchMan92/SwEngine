@@ -15,17 +15,17 @@ void OpenGLContext::unbindTexture(ITexture* p_Tex)
     Context::unbindResource(p_Tex);
 }
 
-void OpenGLContext::bindResource(IContextDependentResource* p_Resource)
+void OpenGLContext::bindResource(IContextResource* p_Resource)
 {
     Context::bindResource(p_Resource);
 }
 
-void OpenGLContext::unbindResource(IContextDependentResource* p_Resource)
+void OpenGLContext::unbindResource(IContextResource* p_Resource)
 {
     Context::unbindResource(p_Resource);
 }
 
-void OpenGLContext::resetResource(IContextDependentResource* p_Resource)
+void OpenGLContext::resetResource(IContextResource* p_Resource)
 {
     Context::resetResource(p_Resource);
 }

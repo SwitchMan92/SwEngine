@@ -19,7 +19,7 @@ public:
     virtual void                    onContextBind                   (IContext*)                     =   0;
     virtual void                    onContextUnbind                 (IContext*)                     =   0;
 
-
+    virtual 						~IContextResource				()								{}
 };
 
 #endif // ICONTEXTRESOURCE_H

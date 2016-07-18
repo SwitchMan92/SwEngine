@@ -5,7 +5,11 @@
 
 class IRenderTarget : IContextResource
 {
-    virtual unsigned int getId()    =   0;
+
+public:
+
+    virtual 				~IRenderTarget()		{}
+
 };
 
 #endif // IRENDERTARGET_H

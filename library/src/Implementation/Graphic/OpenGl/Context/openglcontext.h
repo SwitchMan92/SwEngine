@@ -7,14 +7,13 @@
 
 class OpenGLContext : Context, IGraphicContext, OpenGLTextureFactory
 {
-    friend class OpenGLAdapterOutput;
 
 private:
     OpenGLContext();
 
-    void                                bindResource        (IContextDependentResource*);
-    void                                unbindResource      (IContextDependentResource*);
-    void                                resetResource       (IContextDependentResource*);
+    void                                bindResource        (IContextResource*);
+    void                                unbindResource      (IContextResource*);
+    void                                resetResource       (IContextResource*);
 
 public:
     void                                bindTexture         (ITexture*);
@@ -24,8 +23,6 @@ public:
     void                                deleteTexture       (unsigned int p_Id);
     ITexture*                           getTexture          (unsigned int p_Id);
     std::map<unsigned int, ITexture*>   getTextures         ();
-
-
 
 };
 

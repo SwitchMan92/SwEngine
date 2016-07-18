@@ -10,25 +10,23 @@ class ContextResource : IContextResource, Resource
 
 private:
 
-    std::list<IContext*> 	m_Contexts;
-    IContext*				m_CurrentContext;
+    std::list<Context*> 	m_Contexts;
+    Context*				m_CurrentContext;
 
-    void 			contextBind        (IContext*) 			final;
-    void 			contextUnbind      (IContext*) 			final;
+    void 					contextBind        	(Context*) 				final;
+    void 					contextUnbind      	(Context*) 				final;
 
 protected:
 
-    virtual void 	onContextBind      (Context*)      		=   0;
-    virtual void 	onContextUnbind    (Context*)      		=   0;
+    virtual void 			onContextBind      	(Context*)      		=   0;
+    virtual void 			onContextUnbind    	(Context*)      		=   0;
 
-    //virtual void 	resourceLoad		()					=	0;
-    //virtual void 	resourceUnload		()					=	0;
 
 public:
 
-    				ContextResource		();
+    						ContextResource		();
 
-    IContext*		getCurrentContext	()					final;
+    virtual Context*		getCurrentContext	();
 
 };
 

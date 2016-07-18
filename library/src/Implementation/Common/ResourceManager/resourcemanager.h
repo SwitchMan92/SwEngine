@@ -3,24 +3,24 @@
 
 #include <map>
 #include <string>
-#include "Interfaces/Common/Resource.h"
+#include "Implementation/Common/Resource/resource.h"
 
 class ResourceManager
 {
 	private:
 
-		unsigned int 						m_ResourceCounter;
-		std::map<unsigned int, IResource*> 	m_Resources;
+		unsigned int 							m_ResourceCounter;
+		std::map<unsigned int, Resource*> 		m_Resources;
 
 	protected:
 
-		virtual IResource* 						onResourceLoad		(IResource* p_Resource)					=	0;
-		virtual void 							onResourceUnload	(IResource* p_Resource)					=	0;
+		virtual Resource* 						onResourceLoad		(std::string p_ResourcePath)			=	0;
+		virtual void 							onResourceUnload	(Resource* p_Resource)					=	0;
 
 	public:
 
-		IResource* 								loadResource		(std::string p_ResourcePath) 			final;
-		IResource* 								getResource			(unsigned int p_Id) 					final;
+		Resource* 								loadResource		(std::string p_ResourcePath) 			final;
+		virtual Resource* 						getResource			(unsigned int p_Id) 					final;
 		void									unloadResource		(unsigned int p_Id)						final;
 		std::map<unsigned int, IResource*>		getResources		()										final;
 

@@ -11,10 +11,14 @@ class ITexture : public IContextResource
     friend class ITextureManager;
 
 protected:
-    virtual void setId(unsigned int)    =   0;
+
+    virtual void 			setId		(unsigned int)    	=   0;
 
 public:
-    virtual unsigned int getId()        =   0;
+
+    virtual unsigned int 	getId		()        			=   0;
+
+    virtual 				~ITexture	()					{}
 
 };
 
