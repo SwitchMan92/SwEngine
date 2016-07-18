@@ -1,9 +1,9 @@
 #ifndef IRENDERTARGET_H
 #define IRENDERTARGET_H
 
-#include "icontextdependependentresource.h"
+#include "icontextresource.h"
 
-class IRenderTarget : IContextDependentResource
+class IRenderTarget : IContextResource
 {
     virtual unsigned int getId()    =   0;
 };

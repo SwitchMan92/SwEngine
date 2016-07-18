@@ -2,7 +2,7 @@
 #define ICONTEXTRESOURCE_H
 
 #include <list>
-#include "IResource.h"
+#include "iresource.h"
 
 class IContext;
 
@@ -11,8 +11,8 @@ class IContextResource : IResource
 
 protected:
 
-    void ContextBind        (IContext*)	=	0;
-    void ContextUnbind      (IContext*)	=	0;
+    virtual void 					ContextBind        				(IContext*)						=	0;
+    virtual void 					ContextUnbind      				(IContext*)						=	0;
 
 public:
 
